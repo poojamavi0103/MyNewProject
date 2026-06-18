@@ -1,0 +1,235 @@
+/* =========================
+   RESPONSIVE MOBILE DESIGN
+========================= */
+
+@media screen and (max-width: 1024px){
+
+  .cards{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .sidebar{
+    width:220px;
+  }
+
+  .main-content{
+    margin-left:220px;
+  }
+}
+
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media screen and (max-width: 768px){
+
+  body{
+    flex-direction:column;
+  }
+
+  /* Sidebar */
+
+  .sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+  }
+
+  .sidebar h2{
+    margin-bottom:15px;
+  }
+
+  .sidebar ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+
+  .sidebar ul li{
+    margin-bottom:0;
+    padding:10px 15px;
+  }
+
+  /* Main Content */
+
+  .main-content{
+    margin-left:0;
+    width:100%;
+    padding:20px;
+  }
+
+  /* Topbar */
+
+  .topbar{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+  /* Cards */
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  /* Tables */
+
+  .table-container{
+    overflow-x:auto;
+  }
+
+  table{
+    min-width:600px;
+  }
+
+  /* Forms */
+
+  .container,
+  .login-container,
+  .register-container{
+    width:90%;
+  }
+
+  /* Hero Section */
+
+  .hero{
+    height:auto;
+    padding:60px 20px;
+  }
+
+  .hero-content h1,
+  .hero-content h2{
+    font-size:35px;
+  }
+
+  .hero-content p{
+    font-size:16px;
+  }
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media screen and (max-width: 480px){
+
+  /* Navbar */
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+    padding:15px;
+  }
+
+  .navbar ul{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  /* Sidebar */
+
+  .sidebar{
+    padding:15px;
+  }
+
+  .sidebar ul{
+    flex-direction:column;
+  }
+
+  .sidebar ul li{
+    width:100%;
+    text-align:center;
+  }
+
+  /* Main Content */
+
+  .main-content{
+    padding:15px;
+  }
+
+  /* Cards */
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  .card p{
+    font-size:24px;
+  }
+
+  /* Forms */
+
+  .container,
+  .login-container,
+  .register-container{
+    width:95%;
+    padding:20px;
+  }
+
+  input,
+  select,
+  button{
+    font-size:14px;
+    padding:10px;
+  }
+
+  /* Hero Section */
+
+  .hero-content h1,
+  .hero-content h2{
+    font-size:28px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+
+  .hero-content button{
+    width:100%;
+  }
+
+  /* Tables */
+
+  table{
+    min-width:500px;
+  }
+
+  th,
+  td{
+    padding:8px;
+    font-size:13px;
+  }
+
+  /* Footer */
+
+  footer{
+    font-size:14px;
+    padding:12px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media screen and (max-width: 320px){
+
+  .hero-content h1,
+  .hero-content h2{
+    font-size:22px;
+  }
+
+  .card p{
+    font-size:20px;
+  }
+
+  button{
+    font-size:13px;
+  }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsivemosbile.css">
+  <title>Patient Registration & Login</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(to right, #0077b6, #00b4d8);
+    }
+
+    .container{
+      background:white;
+      width:400px;
+      padding:35px;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      text-align:center;
+      color:#0077b6;
+      margin-bottom:10px;
+    }
+
+    p{
+      text-align:center;
+      color:gray;
+      margin-bottom:25px;
+    }
+
+    .input-box{
+      margin-bottom:18px;
+    }
+
+    .input-box input{
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size:15px;
+    }
+
+    .btn{
+      width:100%;
+      padding:12px;
+      border:none;
+      background:#0077b6;
+      color:white;
+      font-size:16px;
+      border-radius:5px;
+      cursor:pointer;
+      margin-top:10px;
+    }
+
+    .btn:hover{
+      background:#023e8a;
+    }
+
+    .toggle-text{
+      text-align:center;
+      margin-top:20px;
+      font-size:14px;
+    }
+
+    .toggle-text span{
+      color:#0077b6;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    #loginForm{
+      display:none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Registration Form -->
+    <div id="registerForm">
+
+      <h1>Patient Registration</h1>
+
+      <p>Create Your Account</p>
+
+      <div class="input-box">
+        <input type="text" id="regName" placeholder="Full Name">
+      </div>
+
+      <div class="input-box">
+        <input type="email" id="regEmail" placeholder="Email">
+      </div>
+
+      <div class="input-box">
+        <input type="text" id="regPhone" placeholder="Phone Number">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="regPassword" placeholder="Password">
+      </div>
+
+      <button class="btn" onclick="registerPatient()">
+        Register
+      </button>
+
+      <div class="toggle-text">
+        Already have an account?
+        <span onclick="showLogin()">
+          Login
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+
+      <h1>Patient Login</h1>
+
+      <p>Login to Continue</p>
+
+      <div class="input-box">
+        <input type="email" id="loginEmail" placeholder="Email">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="loginPassword" placeholder="Password">
+      </div>
+
+      <button class="btn" onclick="loginPatient()">
+        Login
+      </button>
+
+      <div class="toggle-text">
+        Don't have an account?
+        <span onclick="showRegister()">
+          Register
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // Show Login Form
+    function showLogin(){
+
+      document.getElementById("registerForm").style.display = "none";
+
+      document.getElementById("loginForm").style.display = "block";
+    }
+
+    // Show Register Form
+    function showRegister(){
+
+      document.getElementById("loginForm").style.display = "none";
+
+      document.getElementById("registerForm").style.display = "block";
+    }
+
+    // Registration Function
+    function registerPatient(){
+
+      let name =
+        document.getElementById("regName").value;
+
+      let email =
+        document.getElementById("regEmail").value;
+
+      let phone =
+        document.getElementById("regPhone").value;
+
+      let password =
+        document.getElementById("regPassword").value;
+
+      if(name === "" ||
+         email === "" ||
+         phone === "" ||
+         password === ""){
+
+          alert("Please Fill All Fields");
+
+      }else{
+
+          // Store data in localStorage
+          localStorage.setItem("patientEmail", email);
+
+          localStorage.setItem("patientPassword", password);
+
+          alert("Registration Successful");
+
+          showLogin();
+      }
+    }
+
+    // Login Function
+    function loginPatient(){
+
+      let loginEmail =
+        document.getElementById("loginEmail").value;
+
+      let loginPassword =
+        document.getElementById("loginPassword").value;
+
+      let storedEmail =
+        localStorage.getItem("patientEmail");
+
+      let storedPassword =
+        localStorage.getItem("patientPassword");
+
+      if(loginEmail === storedEmail &&
+         loginPassword === storedPassword){
+
+          alert("Login Successful");
+
+          // Redirect to Dashboard
+          window.location.href = "dashboard.html";
+
+      }else{
+
+          alert("Invalid Email or Password");
+      }
+    }
+
+  </script>
+
+</body>
+</html>

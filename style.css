@@ -1,0 +1,255 @@
+/* =========================
+   GLOBAL ANIMATIONS
+========================= */
+
+/* Page Fade Animation */
+
+body{
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
+
+/* =========================
+   BUTTON ANIMATIONS
+========================= */
+
+button{
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:active{
+  transform:scale(0.95);
+}
+
+/* =========================
+   CARD ANIMATIONS
+========================= */
+
+.card,
+.appointment-card,
+.table-container,
+.container,
+.login-container,
+.register-container{
+  animation: slideUp 1s ease;
+  transition:0.3s;
+}
+
+.card:hover,
+.appointment-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes slideUp{
+
+  from{
+    transform:translateY(50px);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+/* =========================
+   INPUT BOX ANIMATION
+========================= */
+
+input,
+select{
+  transition:0.3s;
+}
+
+input:focus,
+select:focus{
+  border-color:#0077b6;
+  box-shadow:0 0 8px rgba(0,119,182,0.5);
+  outline:none;
+  transform:scale(1.02);
+}
+
+/* =========================
+   SIDEBAR ANIMATION
+========================= */
+
+.sidebar{
+  animation:sidebarSlide 1s ease;
+}
+
+@keyframes sidebarSlide{
+
+  from{
+    transform:translateX(-100%);
+  }
+
+  to{
+    transform:translateX(0);
+  }
+}
+
+/* Sidebar Menu Hover */
+
+.sidebar ul li{
+  transition:0.3s;
+}
+
+.sidebar ul li:hover{
+  padding-left:25px;
+  background:white;
+  color:#0077b6;
+}
+
+/* =========================
+   TABLE ROW HOVER
+========================= */
+
+table tr{
+  transition:0.3s;
+}
+
+table tr:hover{
+  background:#e9f7ff;
+}
+
+/* =========================
+   NAVBAR ANIMATION
+========================= */
+
+.navbar{
+  animation:topSlide 1s ease;
+}
+
+@keyframes topSlide{
+
+  from{
+    transform:translateY(-100%);
+  }
+
+  to{
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   HERO SECTION ANIMATION
+========================= */
+
+.hero-content h1,
+.hero-content h2,
+.hero-content p,
+.hero-content button{
+  animation:zoomIn 1s ease;
+}
+
+@keyframes zoomIn{
+
+  from{
+    transform:scale(0.5);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* =========================
+   LOGO ROTATION EFFECT
+========================= */
+
+.logo:hover{
+  transform:rotate(360deg);
+  transition:1s;
+}
+
+/* =========================
+   LOADING EFFECT
+========================= */
+
+.loading{
+  width:50px;
+  height:50px;
+  border:5px solid #ccc;
+  border-top:5px solid #0077b6;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* =========================
+   NOTIFICATION POPUP
+========================= */
+
+.notification{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#0077b6;
+  color:white;
+  padding:15px 20px;
+  border-radius:5px;
+  animation:popup 0.5s ease;
+}
+
+@keyframes popup{
+
+  from{
+    transform:translateX(100%);
+    opacity:0;
+  }
+
+  to{
+    transform:translateX(0);
+    opacity:1;
+  }
+}
+
+/* =========================
+   FOOTER ANIMATION
+========================= */
+
+footer{
+  animation:footerUp 1s ease;
+}
+
+@keyframes footerUp{
+
+  from{
+    transform:translateY(100%);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
